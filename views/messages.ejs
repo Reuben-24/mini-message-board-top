@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+</head>
+<body>
+  <h2>Messages</h2>
+  <%- include('nav') %>
+  <ul>
+    <% messages.forEach(message => { %>
+      <li>
+        <div>User: <%= message.user %> </div>
+        <div>Text: <%= message.text %> </div>
+        <div>Date: <%= message.added %> </div>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
