@@ -1,4 +1,4 @@
-const messages = require("../db");
+const { insertMessage, getAllMessages } = require("../db/queries.js");
 
 const renderHome = (req,res) => {
   res.render("index");
@@ -8,13 +8,15 @@ const renderNew = (req, res) => {
   res.render("new");
 };
 
-const createMessage = (req, res) => {
-  const { user, text } = req.body;
-  messages.push({text: text, user: user, added: new Date() });
+const createMessage = async (req, res) => {
+  const { message } = req.body;
+  await insertMessage(message);
   res.redirect("/messages");
 };
 
-const renderMessages = (req, res) => {
+const renderMessages = async (req, res) => {
+  const messages = await getAllMessages();
+  console.log("Messages:", messages);
   res.render("messages", { messages });
 };
 

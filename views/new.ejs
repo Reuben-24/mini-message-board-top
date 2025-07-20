@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>new</title>
+  <title>Create New Message</title>
 </head>
 <body>
-  <h1>Create New Message</h2>
+  <h1>Create New Message</h1>
   <%- include('nav') %>
   <form method="POST" action="/new">
-    <label for="user">User</label>
-    <input type="text" id="user" name="user" required>
 
-    <label for="text">Text</label>
-    <input type="text" id="text" name="text" required>
+    <label for="message">Message</label>
+    <input type="text" id="message" name="message" required>
 
     <button type="submit">Submit</button>
   </form>  
