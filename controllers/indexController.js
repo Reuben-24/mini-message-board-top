@@ -16,7 +16,6 @@ const createMessage = async (req, res) => {
 
 const renderMessages = async (req, res) => {
   const messages = await getAllMessages();
-  console.log("Messages:", messages);
   res.render("messages", { messages });
 };
 
